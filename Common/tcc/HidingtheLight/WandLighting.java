@@ -91,6 +91,10 @@ public class WandLighting extends Item {
         }		
         
 	}
+	@Override
+    public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
+        return Block.glowStone.blockID == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+    }
 }
 
 
