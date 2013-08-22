@@ -15,7 +15,7 @@ public class ModInfo {
 
 	public static final String NAME = "Hiding the Light";
 	public static final String MOD_ID = "htl";
-	public static final String version = "v1.1-1.6.2";
+	public static final String version = "v1.2-1.6.2";
 
 	public static Block glowair;
 	public static Item wandlighting;
