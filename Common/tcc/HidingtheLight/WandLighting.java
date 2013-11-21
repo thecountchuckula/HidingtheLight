@@ -82,7 +82,7 @@ public class WandLighting extends Item {
         {
             if (par3World.isAirBlock(par4, par5, par6))
             {
-                par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "random.orb", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 par3World.setBlock(par4, par5, par6, ModInfo.glowair.blockID);
             }
 
@@ -91,11 +91,18 @@ public class WandLighting extends Item {
         }		
         
 	}
+	
 	@Override
-    public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
-        return Block.glowStone.blockID == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
-    }
+	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
+		if(ModMain.enableHardcore == false) {
+			return Item.glowstone.itemID == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+		}
+		else {
+	        return Block.glowStone.blockID == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+	    }
+	}
 }
+	
 
 
 

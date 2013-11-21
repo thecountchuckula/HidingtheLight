@@ -15,7 +15,7 @@ public class ModInfo {
 
 	public static final String NAME = "Hiding the Light";
 	public static final String MOD_ID = "htl";
-	public static final String version = "v1.2-1.6.2";
+	public static final String version = "v1.3-1.6.4";
 
 	public static Block glowair;
 	public static Item wandlighting;
@@ -26,9 +26,6 @@ public class ModInfo {
 	public static final ItemStack hblaze = new ItemStack(Item.blazeRod, 1, 0);
 	public static final ItemStack hglow = new ItemStack(Block.glowStone, 1, 0);
 	public static final ItemStack hgold = new ItemStack(Item.ingotGold, 1, 0);
-	
-	int glowairID;
-	int wandlightingID;
 	
 	
 	// Block Information Section  - Thanks to travi1997 on MinecraftForums.com for helping me figure out my BlockIDs problems.
