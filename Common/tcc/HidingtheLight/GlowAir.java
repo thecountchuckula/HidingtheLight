@@ -16,11 +16,12 @@ import net.minecraft.world.World;
 
 public class GlowAir extends Block
 {
+	public float light = ModMain.lightlevel/10F;
     public GlowAir(int par1)
     {
         super(par1, Material.air);
         this.setLightOpacity(-2);
-        this.setLightValue(1.0f);
+        this.setLightValue(light);
         this.setUnlocalizedName("glowAir");
         if(ModMain.enableCreativeAir == true) {
         	this.setCreativeTab(CreativeTabs.tabBlock);

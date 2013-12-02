@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 
 
 public class WandLighting extends Item {
+	public static String sound;
 
 	public WandLighting(int par1) {
 		super(par1);
@@ -26,6 +27,8 @@ public class WandLighting extends Item {
 		}
 		this.setCreativeTab(CreativeTabs.tabTools);
 		this.setUnlocalizedName("wandLighting");
+		//TODO: add function for if 04/01/xxxx then change sound to farts.
+		this.sound = "random.orb";
 	}
 	
 	
@@ -82,7 +85,7 @@ public class WandLighting extends Item {
         {
             if (par3World.isAirBlock(par4, par5, par6))
             {
-                par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "random.orb", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, sound, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 par3World.setBlock(par4, par5, par6, ModInfo.glowair.blockID);
             }
 

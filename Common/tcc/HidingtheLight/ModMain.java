@@ -16,12 +16,13 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(channels = { ModInfo.MOD_ID }, clientSideRequired = true, serverSideRequired = true)
 public class ModMain {
 
-	static int glowairID;
-	static int wandlightingID;
+	public static int glowairID;
+	public static int wandlightingID;
 	public static boolean enableCreativeAir;
 	public static boolean enableHardcore;
 	public static boolean newIcon;
 	public static boolean lastsLonger;
+	public static int lightlevel;
 	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
@@ -34,6 +35,7 @@ public class ModMain {
 		enableHardcore = config.get(Configuration.CATEGORY_GENERAL, "Enable Hardcore Mode", false).getBoolean(false);
 		newIcon = config.get(Configuration.CATEGORY_GENERAL, "Use New Icon", true).getBoolean(true);
 		lastsLonger = config.get(Configuration.CATEGORY_GENERAL, "Increased Durability", false).getBoolean(false);
+		lightlevel = config.get(Configuration.CATEGORY_GENERAL, "Light Level for Glowing Air (1-10)", 10).getInt();
 		
 		config.save();
 		
